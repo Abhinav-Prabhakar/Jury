@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://abhinav-prabhakar.github.io/jury/">
+  <a href="https://abhinav-prabhakar.github.io/Jury/">
     <img src="docs/hero.jpg" alt="Jury — a warm editorial landing page with the headline: Every project deserves a verdict." width="100%">
   </a>
 </div>
@@ -15,7 +15,7 @@
 </p>
 
 <p align="center">
-  <a href="https://abhinav-prabhakar.github.io/jury/"><img src="https://img.shields.io/badge/Live-Demo-A45C39?style=for-the-badge&logo=githubpages&logoColor=F2ECE1" alt="Live demo"></a>
+  <a href="https://abhinav-prabhakar.github.io/Jury/"><img src="https://img.shields.io/badge/Live-Demo-A45C39?style=for-the-badge&logo=githubpages&logoColor=F2ECE1" alt="Live demo"></a>
   <img src="https://img.shields.io/badge/HTML5-22211D?style=for-the-badge&logo=html5&logoColor=F2ECE1" alt="HTML5">
   <img src="https://img.shields.io/badge/CSS3-22211D?style=for-the-badge&logo=css3&logoColor=F2ECE1" alt="CSS3">
   <img src="https://img.shields.io/badge/JavaScript-22211D?style=for-the-badge&logo=javascript&logoColor=F2ECE1" alt="JavaScript">
@@ -134,7 +134,7 @@ specialist judges — each screen carries one idea, then gets out of the way.
 ## Run it locally
 
 ```sh
-git clone https://github.com/Abhinav-Prabhakar/jury.git
+git clone https://github.com/Abhinav-Prabhakar/Jury.git
 cd jury
 python3 -m http.server 8000
 ```
@@ -153,9 +153,9 @@ docs/           README plates
 <br>
 
 <p align="center">
-  <a href="https://abhinav-prabhakar.github.io/jury/credits.html">Colophon</a> ·
-  <a href="https://github.com/Abhinav-Prabhakar/jury">Source</a> ·
-  <a href="https://github.com/Abhinav-Prabhakar/jury/issues">Issues</a>
+  <a href="https://abhinav-prabhakar.github.io/Jury/credits.html">Colophon</a> ·
+  <a href="https://github.com/Abhinav-Prabhakar/Jury">Source</a> ·
+  <a href="https://github.com/Abhinav-Prabhakar/Jury/issues">Issues</a>
 </p>
 
 <p align="center"><sub>Jury is a fictional product. Names, verdicts and statistics are invented.</sub></p>
