@@ -1,0 +1,570 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jury — AI judging for hackathons</title>
+  <meta name="description" content="Jury is an AI judging panel for hackathons. A panel of specialist AI judges reads every submission and returns a reasoned, evidence-backed verdict against your rubric.">
+  <meta name="theme-color" content="#F2ECE1">
+  <meta property="og:title" content="Jury — AI judging for hackathons">
+  <meta property="og:description" content="Every project deserves a verdict. A panel of specialist AI judges reads every repo, watches every demo and scores every submission against your rubric.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/img/threshold.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script>document.documentElement.classList.replace('no-js', 'js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <svg class="svg-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <symbol id="i-arrow" viewBox="0 0 16 16">
+      <path d="M4 12L12 4M12 4H5.4M12 4v6.6" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-down" viewBox="0 0 16 16">
+      <path d="M8 3v10M3.5 8.5L8 13l4.5-4.5" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-plus" viewBox="0 0 16 16">
+      <path d="M8 3v10M3 8h10" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <div class="header-inner shell">
+      <a class="brand" href="#top" aria-label="Jury — home">
+        <span class="seal" aria-hidden="true">J</span>
+        <span class="brand-word">Jury</span>
+      </a>
+
+      <nav class="primary-nav" aria-label="Primary">
+        <a href="#studio">Why Jury</a>
+        <a href="#method">Method</a>
+        <a href="#room">Panel</a>
+        <a href="#work">Panels</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn--small" href="#enquire">
+          <span>Enquire</span>
+          <span class="btn-icon" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu-panel" data-menu-toggle>
+          <span class="menu-toggle-lines" aria-hidden="true"><i></i><i></i></span>
+          <span class="sr-only">Open menu</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu-panel" id="menu-panel" aria-hidden="true" data-menu>
+    <div class="menu-inner shell">
+      <div class="menu-top">
+        <a class="brand" href="#top" data-menu-link>
+          <span class="seal" aria-hidden="true">J</span>
+          <span class="brand-word">Jury</span>
+        </a>
+        <button class="menu-close" type="button" data-menu-close>
+          <span>Close</span>
+          <span class="menu-close-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+      <nav class="menu-nav" aria-label="Menu">
+        <a href="#studio" data-menu-link><span>01</span>Why Jury</a>
+        <a href="#method" data-menu-link><span>02</span>Method</a>
+        <a href="#room" data-menu-link><span>03</span>The panel</a>
+        <a href="#work" data-menu-link><span>04</span>Panels</a>
+        <a href="#enquire" data-menu-link><span>05</span>Enquire</a>
+      </nav>
+
+      <div class="menu-foot">
+        <div>
+          <span class="micro">Correspondence</span>
+          <a href="mailto:studio@jury.studio">studio@jury.studio</a>
+        </div>
+        <div>
+          <span class="micro">Studios</span>
+          <p>Zurich · London</p>
+        </div>
+        <p class="menu-note">Two pilot events open for 2027.</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="main">
+    <section class="hero" id="top" data-chapter="00 / Threshold">
+      <div class="shell">
+        <div class="hero-kicker">
+          <p class="eyebrow">AI judging for hackathons</p>
+          <p class="hero-locale"><span class="dot" aria-hidden="true"></span> Zurich · London</p>
+        </div>
+
+        <h1 class="hero-title" aria-label="Every project deserves a verdict.">
+          <span class="line"><span class="line-inner">Every project</span></span>
+          <span class="line"><span class="line-inner">deserves a <em>verdict</em><span class="period">.</span></span></span>
+        </h1>
+
+        <div class="hero-foot">
+          <p class="hero-lede" data-hero>Jury convenes a panel of specialist AI judges to read every repository, watch every demo and score every submission against your rubric. Not a leaderboard. A reasoned verdict.</p>
+          <div class="hero-actions" data-hero>
+            <a class="btn" href="#enquire">
+              <span>Judge your hackathon</span>
+              <span class="btn-icon" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+            </a>
+            <a class="text-link" href="#method">Read the method</a>
+          </div>
+        </div>
+
+        <div class="hero-meta" data-hero>
+          <span>Est. 2014</span>
+          <span>Every submission read in full</span>
+          <span class="hero-meta-last">47.3769° N, 8.5417° E</span>
+        </div>
+      </div>
+
+      <figure class="hero-figure" data-hero>
+        <div class="hero-media">
+          <img src="assets/img/threshold.jpg" width="2600" height="1733" alt="A pale sand-coloured wall with a tall doorway cut into deep shadow, lit by low afternoon sun." fetchpriority="high" data-parallax-media="18">
+          <div class="hero-media-scrim" aria-hidden="true"></div>
+          <p class="hero-plate-mark" aria-hidden="true"><span>Plate 01</span><i></i>Before the verdict</p>
+        </div>
+        <figcaption class="shell hero-caption">
+          <span class="caption-plate">Plate 01</span>
+          <span class="caption-title">The threshold, before the first submission is opened</span>
+          <span class="caption-coord">Zurich · 07:12</span>
+          <span class="scroll-cue" aria-hidden="true"><i></i>Scroll</span>
+        </figcaption>
+      </figure>
+    </section>
+
+    <div class="marquee-band" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-group">
+          <span class="marquee-item">Repos</span><span class="marquee-sep"></span>
+          <span class="marquee-item">Demos</span><span class="marquee-sep"></span>
+          <span class="marquee-item">Rubrics</span><span class="marquee-sep"></span>
+          <span class="marquee-item">Evidence</span><span class="marquee-sep"></span>
+          <span class="marquee-item">Dissent</span><span class="marquee-sep"></span>
+          <span class="marquee-item">Deliberation</span><span class="marquee-sep"></span>
+          <span class="marquee-item">Verdict</span><span class="marquee-sep"></span>
+        </div>
+        <div class="marquee-group">
+          <span class="marquee-item">Repos</span><span class="marquee-sep"></span>
+          <span class="marquee-item">Demos</span><span class="marquee-sep"></span>
+          <span class="marquee-item">Rubrics</span><span class="marquee-sep"></span>
+          <span class="marquee-item">Evidence</span><span class="marquee-sep"></span>
+          <span class="marquee-item">Dissent</span><span class="marquee-sep"></span>
+          <span class="marquee-item">Deliberation</span><span class="marquee-sep"></span>
+          <span class="marquee-item">Verdict</span><span class="marquee-sep"></span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section wager" id="studio" data-chapter="01 / Position">
+      <div class="shell">
+        <div class="section-top">
+          <div class="section-label">
+            <span class="label-index">01</span>
+            <span class="label-text">Position</span>
+          </div>
+          <p class="micro">Evidence over applause</p>
+        </div>
+
+        <div class="wager-grid">
+          <div class="wager-copy">
+            <h2 class="wager-title" data-reveal>Most hackathons<br>judge the <em>demo.</em><br>We judge the <em>work.</em></h2>
+            <p class="wager-note" data-reveal style="--d:1">Every repo read. Every demo watched. Every score tied to evidence.</p>
+            <a class="text-link text-link--arrow" href="#method" data-reveal style="--d:2">See how it works <svg class="icon"><use href="#i-arrow"/></svg></a>
+          </div>
+
+          <aside class="verdict-card" data-reveal style="--d:1" aria-label="Specimen verdict for Project Aurora: 94.2 out of 100">
+            <div class="verdict-head">
+              <span class="micro">Specimen verdict</span>
+              <span class="verdict-id">No. 118</span>
+            </div>
+
+            <div class="verdict-main">
+              <div>
+                <p class="verdict-project">Project Aurora</p>
+                <p class="verdict-tag">Climate · Grand prize</p>
+              </div>
+              <p class="verdict-score"><span>94.2</span><small>/100</small></p>
+            </div>
+
+            <div class="verdict-bars" aria-hidden="true">
+              <div class="verdict-bar" style="--score: .96"><span>Engineering</span><i><b></b></i><span>96</span></div>
+              <div class="verdict-bar" style="--score: .91"><span>Product</span><i><b></b></i><span>91</span></div>
+              <div class="verdict-bar" style="--score: .94"><span>Design</span><i><b></b></i><span>94</span></div>
+              <div class="verdict-bar" style="--score: .97"><span>Impact</span><i><b></b></i><span>97</span></div>
+            </div>
+
+            <p class="verdict-reason">“The only submission that survived the cost model.”</p>
+
+            <div class="verdict-foot">
+              <span>4 judges</span>
+              <span>38 dimensions</span>
+              <span>1 dissent</span>
+            </div>
+          </aside>
+        </div>
+
+        <div class="stat-band" data-reveal>
+          <div class="stat">
+            <span class="stat-num" data-count="12" data-suffix="k+">12k+</span>
+            <span class="stat-label">Projects read in full</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="240" data-suffix="+">240+</span>
+            <span class="stat-label">Hackathons judged</span>
+          </div>
+          <div class="stat">
+            <span class="stat-num" data-count="96" data-suffix="%">96%</span>
+            <span class="stat-label">Verdicts without appeal</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section process" id="method" data-chapter="02 / Method">
+      <div class="shell">
+        <div class="section-top">
+          <div class="section-label">
+            <span class="label-index">02</span>
+            <span class="label-text">Method</span>
+          </div>
+          <p class="micro">From repo to verdict</p>
+        </div>
+
+        <div class="section-head process-head">
+          <h2 class="h2" data-reveal>One pipeline.<br><em>Four passes.</em></h2>
+          <p class="section-intro" data-reveal style="--d:1">No skipped repos. No vibes. Your rubric, applied to every submission.</p>
+        </div>
+
+        <ol class="process-grid">
+          <li class="process-step" data-reveal>
+            <span class="process-num">01</span>
+            <h3>Ingest</h3>
+            <p>Every repo and demo, opened.</p>
+            <span class="process-meta">Minutes</span>
+          </li>
+          <li class="process-step" data-reveal style="--d:1">
+            <span class="process-num">02</span>
+            <h3>Convene</h3>
+            <p>A specialist panel per track.</p>
+            <span class="process-meta">Per track</span>
+          </li>
+          <li class="process-step" data-reveal style="--d:2">
+            <span class="process-num">03</span>
+            <h3>Deliberate</h3>
+            <p>Independent scores. Cited evidence.</p>
+            <span class="process-meta">Two rounds</span>
+          </li>
+          <li class="process-step" data-reveal style="--d:3">
+            <span class="process-num">04</span>
+            <h3>Resolve</h3>
+            <p>A ranked shortlist, with dissent.</p>
+            <span class="process-meta">Before finals</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section panel" id="room" data-chapter="03 / Panel">
+      <div class="shell">
+        <div class="section-top">
+          <div class="section-label">
+            <span class="label-index">03</span>
+            <span class="label-text">The panel</span>
+          </div>
+          <p class="micro">Independent by design</p>
+        </div>
+
+        <div class="section-head panel-head">
+          <h2 class="h2 panel-title" data-reveal>A panel, not a <em>prompt.</em></h2>
+          <p class="section-intro" data-reveal style="--d:1">Four lenses. Four independent scores. One reasoned verdict.</p>
+        </div>
+
+        <div class="panel-grid">
+          <figure class="panel-figure" data-reveal>
+            <div class="panel-media">
+              <img src="assets/img/stair-light.jpg" width="1800" height="2700" loading="lazy" alt="A sharp wedge of sunlight falling across the concrete wall and steps of a quiet stairwell." data-parallax-media="16">
+              <div class="panel-scrim" aria-hidden="true"></div>
+              <figcaption class="panel-quote">
+                <span class="micro">Fig. 03 — The deliberation</span>
+                <blockquote>“A score without evidence is just a <em>vibe.</em>”</blockquote>
+              </figcaption>
+            </div>
+          </figure>
+
+          <div class="panel-list">
+            <div class="panel-list-head">
+              <span class="micro">Panel 118</span>
+              <span class="micro">4 judges</span>
+            </div>
+
+            <article class="judge" data-reveal>
+              <span class="judge-mark" aria-hidden="true">E</span>
+              <div class="judge-body">
+                <h3>Engineering</h3>
+                <p>Reads the repo before the pitch.</p>
+              </div>
+              <span class="judge-index" aria-hidden="true">01</span>
+            </article>
+
+            <article class="judge" data-reveal style="--d:1">
+              <span class="judge-mark" aria-hidden="true">P</span>
+              <div class="judge-body">
+                <h3>Product</h3>
+                <p>Tests whether the demo is the product.</p>
+              </div>
+              <span class="judge-index" aria-hidden="true">02</span>
+            </article>
+
+            <article class="judge" data-reveal style="--d:2">
+              <span class="judge-mark" aria-hidden="true">D</span>
+              <div class="judge-body">
+                <h3>Design</h3>
+                <p>Scores craft, not decoration.</p>
+              </div>
+              <span class="judge-index" aria-hidden="true">03</span>
+            </article>
+
+            <article class="judge" data-reveal style="--d:3">
+              <span class="judge-mark" aria-hidden="true">I</span>
+              <div class="judge-body">
+                <h3>Impact</h3>
+                <p>Asks who this is actually for.</p>
+              </div>
+              <span class="judge-index" aria-hidden="true">04</span>
+            </article>
+
+            <p class="panel-note" data-reveal style="--d:4">Scores are sealed until all four are in.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quote-band" data-chapter="— / Archive">
+      <figure class="quote-figure">
+        <img src="assets/img/dunes-fog.jpg" width="2600" height="1733" loading="lazy" alt="Fog settling over coastal sand dunes and dry beach grass at first light." data-parallax-media="30">
+        <div class="quote-scrim" aria-hidden="true"></div>
+
+        <div class="shell quote-inner">
+          <p class="eyebrow eyebrow--light">From the deliberation — Panel 118</p>
+          <div class="quote-body">
+            <blockquote>“A verdict is only as good as the <em>doubt</em> it has survived.”</blockquote>
+            <figcaption>
+              <span class="quote-rule" aria-hidden="true"></span>
+              Ilse Marchetti, Founding judge
+            </figcaption>
+          </div>
+        </div>
+      </figure>
+    </section>
+
+    <section class="section cases" id="work" data-chapter="04 / Panels">
+      <div class="shell">
+        <div class="section-top">
+          <div class="section-label">
+            <span class="label-index">04</span>
+            <span class="label-text">Panels</span>
+          </div>
+          <p class="micro">Selected records</p>
+        </div>
+
+        <div class="section-head cases-head">
+          <h2 class="h2" data-reveal>Panels we can name.</h2>
+          <p class="section-intro" data-reveal style="--d:1">Five events. The rest are under NDA.</p>
+        </div>
+
+        <div class="case-grid">
+          <a class="case case--wide" href="#enquire" data-reveal>
+            <img src="assets/img/dunes-mist.jpg" width="1600" height="1067" loading="lazy" alt="Mist drifting across pale coastal dunes and dry grass.">
+            <span class="case-index">01</span>
+            <span class="case-open" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+            <div class="case-caption">
+              <h3>2,400 builders. One night.</h3>
+              <p>Climate <span>·</span> 2025</p>
+            </div>
+          </a>
+
+          <a class="case case--tall" href="#enquire" data-reveal style="--d:1">
+            <img src="assets/img/writing.jpg" width="1600" height="1068" loading="lazy" alt="A desk with handwritten notes, a pen and the warm shadow of a window.">
+            <span class="case-index">02</span>
+            <span class="case-open" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+            <div class="case-caption">
+              <h3>Every demo looked the same.</h3>
+              <p>AI agents <span>·</span> 2025</p>
+            </div>
+          </a>
+
+          <a class="case case--third" href="#enquire" data-reveal>
+            <img src="assets/img/dune-prints.jpg" width="1600" height="1067" loading="lazy" alt="Footprints crossing wind-rippled desert sand in low sunlight.">
+            <span class="case-index">03</span>
+            <span class="case-open" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+            <div class="case-caption">
+              <h3>38 submissions. Three judges.</h3>
+              <p>Health <span>·</span> 2024</p>
+            </div>
+          </a>
+
+          <a class="case case--third" href="#enquire" data-reveal style="--d:1">
+            <img src="assets/img/library.jpg" width="1400" height="2195" loading="lazy" alt="A quiet library reading room lined with tall bookshelves and warm light.">
+            <span class="case-index">04</span>
+            <span class="case-open" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+            <div class="case-caption">
+              <h3>No rubric. One hour.</h3>
+              <p>Education <span>·</span> 2024</p>
+            </div>
+          </a>
+
+          <a class="case case--third" href="#enquire" data-reveal style="--d:2">
+            <img src="assets/img/gallery.jpg" width="1400" height="933" loading="lazy" alt="A pale gallery interior with a single framed work and long shadows.">
+            <span class="case-index">05</span>
+            <span class="case-open" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+            <div class="case-caption">
+              <h3>Craft decided the podium.</h3>
+              <p>Design <span>·</span> 2023</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="work-foot" data-reveal>
+          <a class="text-link text-link--arrow" href="#enquire">Request a sample verdict <svg class="icon"><use href="#i-arrow"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section enquire" id="enquire" data-chapter="05 / Enquire">
+      <div class="shell">
+        <div class="enquire-grid">
+          <div class="enquire-copy">
+            <div class="section-label">
+              <span class="label-index">05</span>
+              <span class="label-text">Enquire</span>
+            </div>
+
+            <h2 class="enquire-title" data-reveal>Bring your <em>hackathon.</em></h2>
+
+            <p class="enquire-lede" data-reveal style="--d:1">Tell us what you’re running. We reply within two working days.</p>
+
+            <div class="availability" data-reveal style="--d:2">
+              <span class="dot" aria-hidden="true"></span>
+              <span>Two pilot events open for 2027</span>
+            </div>
+
+            <div class="enquire-contact" data-reveal style="--d:3">
+              <span class="micro">Direct</span>
+              <a href="mailto:studio@jury.studio">studio@jury.studio</a>
+              <a href="tel:+41445052140">+41 44 505 21 40</a>
+            </div>
+          </div>
+
+          <div class="form-panel" data-reveal style="--d:1">
+            <div class="form-head">
+              <span class="micro">Enquiry 01</span>
+              <span class="form-status">Response within two working days</span>
+            </div>
+
+            <form class="enquiry-form" data-enquiry-form novalidate>
+              <div class="field">
+                <label for="name">Your name</label>
+                <input id="name" name="name" type="text" autocomplete="name" placeholder="Ada Lovelace" required>
+              </div>
+              <div class="field">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="ada@institution.org" required>
+              </div>
+              <div class="field">
+                <label for="question">Your hackathon, in one line</label>
+                <input id="question" name="question" type="text" placeholder="400 builders, 48 hours." required>
+              </div>
+
+              <p class="form-error" data-form-error role="alert" hidden>Please complete each field with a valid email.</p>
+
+              <button class="btn btn--form" type="submit">
+                <span>Request a walkthrough</span>
+                <span class="btn-icon" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
+              </button>
+
+              <p class="form-privacy">No mailing lists. No follow-ups. Your submissions stay yours.</p>
+            </form>
+
+            <div class="form-success" data-form-success hidden tabindex="-1">
+              <span class="micro">Received</span>
+              <h3>Thank you<span data-success-name></span>.</h3>
+              <p>Your event is with us. We will reply within two working days, from a person rather than a system.</p>
+              <button class="text-link text-link--arrow" type="button" data-form-reset>Send another <svg class="icon"><use href="#i-arrow"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" data-footer>
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a class="brand brand--light" href="#top">
+            <span class="seal" aria-hidden="true">J</span>
+            <span class="brand-word">Jury</span>
+          </a>
+          <p class="footer-statement">An independent AI judging panel for hackathons.</p>
+        </div>
+
+        <nav class="footer-col" aria-label="Footer">
+          <h4>Jury</h4>
+          <ul>
+            <li><a href="#studio">Why Jury</a></li>
+            <li><a href="#method">Method</a></li>
+            <li><a href="#room">The panel</a></li>
+            <li><a href="#work">Panels</a></li>
+          </ul>
+        </nav>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:studio@jury.studio">studio@jury.studio</a></li>
+            <li><a href="tel:+41445052140">+41 44 505 21 40</a></li>
+            <li><a href="#enquire">Request a walkthrough</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-offices">
+          <h4>Studios</h4>
+          <div class="office-row"><span>Zurich</span><time data-clock="Europe/Zurich">--:--</time></div>
+          <div class="office-row"><span>London</span><time data-clock="Europe/London">--:--</time></div>
+          <p class="footer-note"><span class="dot" aria-hidden="true"></span>Two pilot events open for 2027</p>
+        </div>
+      </div>
+
+      <div class="footer-legal">
+        <p>© 2026 Jury Systems AG</p>
+        <p class="footer-legal-mid">Zurich · London · Every timezone</p>
+        <div class="footer-legal-links">
+          <a href="credits.html">Credits</a>
+          <button class="back-top" type="button" data-back-top aria-label="Back to top">
+            <svg class="icon" aria-hidden="true"><use href="#i-down"/></svg>
+          </button>
+        </div>
+      </div>
+
+      <p class="footer-wordmark" aria-hidden="true">Jury</p>
+    </div>
+  </footer>
+
+  <div class="chapter" aria-hidden="true" data-chapter-indicator>
+    <span class="chapter-dot"></span>
+    <span data-chapter-label>00 / Threshold</span>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
