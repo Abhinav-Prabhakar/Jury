@@ -26,7 +26,7 @@
   <img src="https://img.shields.io/badge/Dependencies-Zero-22211D?style=for-the-badge" alt="Zero dependencies">
   <img src="https://img.shields.io/badge/Responsive-Yes-A45C39?style=for-the-badge" alt="Responsive">
   <img src="https://img.shields.io/badge/License-MIT-22211D?style=for-the-badge" alt="MIT License">
-  <img src="https://img.shields.io/github/stars/Abhinav-Prabhakar/jury?style=for-the-badge&color=A45C39&labelColor=22211D" alt="GitHub stars">
+  <img src="https://img.shields.io/github/stars/Abhinav-Prabhakar/Jury?style=for-the-badge&color=A45C39&labelColor=22211D" alt="GitHub stars">
 </p>
 
 <br>
@@ -135,7 +135,7 @@ specialist judges — each screen carries one idea, then gets out of the way.
 
 ```sh
 git clone https://github.com/Abhinav-Prabhakar/Jury.git
-cd jury
+cd Jury
 python3 -m http.server 8000
 ```
 
