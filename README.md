@@ -34,8 +34,8 @@
 <p align="center">
   <a href="#the-verdict">The verdict</a> ·
   <a href="#the-method">The method</a> ·
-  <a href="#the-panel">The panel</a> ·
   <a href="#selected-records">Selected records</a> ·
+  <a href="#on-mobile">On mobile</a> ·
   <a href="#run-it-locally">Run it</a>
 </p>
 
@@ -64,6 +64,8 @@ specialist judges — each screen carries one idea, then gets out of the way.
 
 <br>
 
+## The method
+
 <table>
 <tr>
 <td width="50%" valign="top">
@@ -80,6 +82,8 @@ specialist judges — each screen carries one idea, then gets out of the way.
 </table>
 
 <br>
+
+## Selected records
 
 <table>
 <tr>
@@ -98,7 +102,7 @@ specialist judges — each screen carries one idea, then gets out of the way.
 
 <br>
 
-## The panel, in your pocket
+## On mobile
 
 <div align="center">
   <img src="docs/mobile.jpg" alt="The Jury landing page on a phone: oversized serif headline and a dark verdict card." width="320">
