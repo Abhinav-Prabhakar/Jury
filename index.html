@@ -38,6 +38,9 @@
     <symbol id="i-asterisk" viewBox="0 0 24 24">
       <path d="M12 6v12M17.196 9 6.804 15M6.804 9l10.392 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
     </symbol>
+    <symbol id="i-check" viewBox="0 0 16 16">
+      <path d="M3.5 8.4 6.4 11.3 12.5 5" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
   </svg>
 
   <div class="grain" aria-hidden="true"></div>
@@ -52,7 +55,7 @@
       <nav class="primary-nav" aria-label="Primary">
         <a href="#studio">Why Jury</a>
         <a href="#method">Method</a>
-        <a href="#room">Panel</a>
+        <a href="#oversight">Oversight</a>
         <a href="#work">Panels</a>
       </nav>
 
@@ -85,9 +88,10 @@
       <nav class="menu-nav" aria-label="Menu">
         <a href="#studio" data-menu-link><span>01</span>Why Jury</a>
         <a href="#method" data-menu-link><span>02</span>Method</a>
-        <a href="#room" data-menu-link><span>03</span>The panel</a>
+        <a href="#oversight" data-menu-link><span>03</span>Oversight</a>
         <a href="#work" data-menu-link><span>04</span>Panels</a>
-        <a href="#enquire" data-menu-link><span>05</span>Enquire</a>
+        <a href="#questions" data-menu-link><span>05</span>Questions</a>
+        <a href="#enquire" data-menu-link><span>06</span>Enquire</a>
       </nav>
 
       <div class="menu-foot">
@@ -276,82 +280,65 @@
       </div>
     </section>
 
-    <section class="section panel" id="room" data-chapter="03 / Panel">
+    <section class="section oversight" id="oversight" data-chapter="03 / Oversight" data-tone="dark">
       <div class="shell">
         <div class="section-top">
           <div class="section-label">
             <span class="label-index">03</span>
-            <span class="label-text">The panel</span>
+            <span class="label-text">Oversight</span>
           </div>
-          <p class="micro">Independent by design</p>
+          <p class="micro">Decision rights, always human</p>
         </div>
 
-        <div class="section-head panel-head">
-          <h2 class="h2 panel-title" data-reveal>A panel, not a <em>prompt.</em></h2>
-          <p class="section-intro" data-reveal style="--d:1">Four lenses. Four independent scores. One reasoned verdict.</p>
+        <div class="section-head oversight-head">
+          <h2 class="h2" data-reveal>AI prepares the room.<br><em>People make the call.</em></h2>
+          <p class="section-intro" data-reveal style="--d:1">Automation should make judgment more accountable, not less visible. Jury is built around explicit human decision rights at every consequential step.</p>
         </div>
 
-        <div class="panel-grid">
-          <figure class="panel-figure" data-reveal>
-            <div class="panel-media">
+        <div class="oversight-grid">
+          <figure class="oversight-figure" data-reveal>
+            <div class="oversight-media">
               <img src="assets/img/stair-light.jpg" width="1800" height="2700" loading="lazy" alt="A sharp wedge of sunlight falling across the concrete wall and steps of a quiet stairwell." data-parallax-media="16">
-              <div class="panel-scrim" aria-hidden="true"></div>
-              <figcaption class="panel-quote">
-                <span class="micro">Fig. 03 — The deliberation</span>
-                <blockquote>“A score without evidence is just a <em>vibe.</em>”</blockquote>
+              <div class="oversight-scrim" aria-hidden="true"></div>
+              <figcaption class="oversight-quote">
+                <blockquote>“The model can recommend.<br>Only the panel can decide.”</blockquote>
+                <p class="micro">Decision rights / Always human</p>
               </figcaption>
             </div>
           </figure>
 
-          <div class="panel-list">
-            <div class="panel-list-head">
-              <span class="micro">Panel 118</span>
-              <span class="micro">4 judges</span>
-            </div>
-
-            <article class="judge" data-reveal>
-              <span class="judge-mark" aria-hidden="true">E</span>
-              <div class="judge-body">
-                <h3>Engineering</h3>
-                <p>Reads the repo before the pitch.</p>
+          <div class="oversight-list">
+            <article class="oversight-item" data-reveal>
+              <span class="oversight-check" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+              <div>
+                <h3>Calibrate before scoring</h3>
+                <p>Use shared anchor submissions to expose different interpretations of your rubric before independent review begins.</p>
               </div>
-              <span class="judge-index" aria-hidden="true">01</span>
             </article>
 
-            <article class="judge" data-reveal style="--d:1">
-              <span class="judge-mark" aria-hidden="true">P</span>
-              <div class="judge-body">
-                <h3>Product</h3>
-                <p>Tests whether the demo is the product.</p>
+            <article class="oversight-item" data-reveal style="--d:1">
+              <span class="oversight-check" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+              <div>
+                <h3>Interrogate disagreement</h3>
+                <p>See the exact criterion, evidence and rationale behind a gap. Record the resolution without erasing the original scores.</p>
               </div>
-              <span class="judge-index" aria-hidden="true">02</span>
             </article>
 
-            <article class="judge" data-reveal style="--d:2">
-              <span class="judge-mark" aria-hidden="true">D</span>
-              <div class="judge-body">
-                <h3>Design</h3>
-                <p>Scores craft, not decoration.</p>
+            <article class="oversight-item" data-reveal style="--d:2">
+              <span class="oversight-check" aria-hidden="true"><svg class="icon"><use href="#i-check"/></svg></span>
+              <div>
+                <h3>Own the final record</h3>
+                <p>Judges can override any recommendation, add context and sign the final decision with a plain-language explanation.</p>
               </div>
-              <span class="judge-index" aria-hidden="true">03</span>
             </article>
 
-            <article class="judge" data-reveal style="--d:3">
-              <span class="judge-mark" aria-hidden="true">I</span>
-              <div class="judge-body">
-                <h3>Impact</h3>
-                <p>Asks who this is actually for.</p>
-              </div>
-              <span class="judge-index" aria-hidden="true">04</span>
-            </article>
-
-            <p class="panel-note" data-reveal style="--d:4">Scores are sealed until all four are in.</p>
+            <p class="oversight-caveat" data-reveal style="--d:3"><span>A necessary caveat:</span> no scoring system can guarantee fairness. Jury makes criteria, evidence and interventions easier to inspect; organisers remain responsible for testing outcomes and listening to participants.</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="quote-band" data-chapter="— / Archive">
+    <section class="quote-band" data-chapter="— / Archive" data-tone="dark">
       <figure class="quote-figure">
         <img src="assets/img/dunes-fog.jpg" width="2600" height="1733" loading="lazy" alt="Fog settling over coastal sand dunes and dry beach grass at first light." data-parallax-media="30">
         <div class="quote-scrim" aria-hidden="true"></div>
@@ -442,32 +429,146 @@
       </div>
     </section>
 
-    <section class="section enquire" id="enquire" data-chapter="05 / Enquire">
+    <section class="section faq" id="questions" data-chapter="05 / Questions">
       <div class="shell">
-        <div class="enquire-grid">
-          <div class="enquire-copy">
-            <div class="section-label">
-              <span class="label-index">05</span>
-              <span class="label-text">Enquire</span>
-            </div>
+        <div class="section-top">
+          <div class="section-label">
+            <span class="label-index">05</span>
+            <span class="label-text">Questions</span>
+          </div>
+          <p class="micro">Asked plainly</p>
+        </div>
 
-            <h2 class="enquire-title" data-reveal>Bring your <em>hackathon.</em></h2>
+        <div class="faq-grid">
+          <div class="faq-intro">
+            <h2 class="h2" data-reveal>Before you<br><em>ask the room.</em></h2>
+            <p class="section-intro" data-reveal style="--d:1">Good judgment starts with good questions. These are the ones we think every organiser should ask.</p>
+          </div>
 
-            <p class="enquire-lede" data-reveal style="--d:1">Tell us what you’re running. We reply within two working days.</p>
+          <div class="faq-list" data-faq>
+            <article class="faq-item is-open" data-faq-item data-reveal>
+              <h3>
+                <button class="faq-question" type="button" id="faq-q1" aria-expanded="true" aria-controls="faq-a1">
+                  <span class="faq-index" aria-hidden="true">01</span>
+                  <span class="faq-question-text">Does Jury choose the winners?</span>
+                  <span class="faq-toggle" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+                </button>
+              </h3>
+              <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1">
+                <div class="faq-answer-inner">
+                  <p>No. Jury structures evidence, applies your rubric consistently and surfaces where judges disagree. People set the criteria, inspect the reasoning, override any score and make every final decision.</p>
+                </div>
+              </div>
+            </article>
 
-            <div class="availability" data-reveal style="--d:2">
+            <article class="faq-item" data-faq-item data-reveal style="--d:1">
+              <h3>
+                <button class="faq-question" type="button" id="faq-q2" aria-expanded="false" aria-controls="faq-a2">
+                  <span class="faq-index" aria-hidden="true">02</span>
+                  <span class="faq-question-text">What counts as evidence?</span>
+                  <span class="faq-toggle" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+                </button>
+              </h3>
+              <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2">
+                <div class="faq-answer-inner">
+                  <p>Every repository, demo, test note and submission is compiled into one evidence record, and missing material stays visibly missing. Every observation points back to a commit, a test, a recording or a judge note. Unsupported claims are marked as claims.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="faq-item" data-faq-item data-reveal style="--d:2">
+              <h3>
+                <button class="faq-question" type="button" id="faq-q3" aria-expanded="false" aria-controls="faq-a3">
+                  <span class="faq-index" aria-hidden="true">03</span>
+                  <span class="faq-question-text">Can we use our own rubric and model provider?</span>
+                  <span class="faq-toggle" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+                </button>
+              </h3>
+              <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3">
+                <div class="faq-answer-inner">
+                  <p>Yes. Bring your rubric or start from one of ours. Jury runs your criteria with your score anchors, and the model provider is configured per event rather than fixed by us.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="faq-item" data-faq-item data-reveal style="--d:3">
+              <h3>
+                <button class="faq-question" type="button" id="faq-q4" aria-expanded="false" aria-controls="faq-a4">
+                  <span class="faq-index" aria-hidden="true">04</span>
+                  <span class="faq-question-text">How do you handle bias and inconsistent judging?</span>
+                  <span class="faq-toggle" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+                </button>
+              </h3>
+              <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4">
+                <div class="faq-answer-inner">
+                  <p>Judges score independently, against shared anchors, before seeing each other's numbers. Jury flags outliers and split decisions for deliberation instead of hiding them inside an average.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="faq-item" data-faq-item data-reveal style="--d:4">
+              <h3>
+                <button class="faq-question" type="button" id="faq-q5" aria-expanded="false" aria-controls="faq-a5">
+                  <span class="faq-index" aria-hidden="true">05</span>
+                  <span class="faq-question-text">What happens when judges disagree?</span>
+                  <span class="faq-toggle" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+                </button>
+              </h3>
+              <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5">
+                <div class="faq-answer-inner">
+                  <p>The gap is surfaced with its criterion, evidence and rationale. The panel resolves it, and the original scores stay on record alongside the final decision and its written explanation.</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="faq-item" data-faq-item data-reveal style="--d:5">
+              <h3>
+                <button class="faq-question" type="button" id="faq-q6" aria-expanded="false" aria-controls="faq-a6">
+                  <span class="faq-index" aria-hidden="true">06</span>
+                  <span class="faq-question-text">Can participants see their feedback?</span>
+                  <span class="faq-toggle" aria-hidden="true"><svg class="icon"><use href="#i-plus"/></svg></span>
+                </button>
+              </h3>
+              <div class="faq-answer" id="faq-a6" role="region" aria-labelledby="faq-q6">
+                <div class="faq-answer-inner">
+                  <p>Organisers decide what is shared. Teams can receive a written, evidence-linked summary without exposing individual judge scores or the internal deliberation.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta" id="enquire" data-chapter="06 / Enquire" data-tone="dark">
+      <div class="shell">
+        <div class="section-top">
+          <div class="section-label">
+            <span class="label-index">06</span>
+            <span class="label-text">Enquire</span>
+          </div>
+          <p class="micro">Your next judging room</p>
+        </div>
+
+        <h2 class="cta-title" data-reveal>Give good work<br><em>a fair hearing.</em></h2>
+
+        <div class="cta-body">
+          <div class="cta-copy">
+            <p class="cta-lede" data-reveal>Start with the shape of your event. Tell us what you’re running and we’ll turn it into a practical calibration, review and deliberation brief.</p>
+
+            <div class="availability" data-reveal style="--d:1">
               <span class="dot" aria-hidden="true"></span>
               <span>Two pilot events open for 2027</span>
             </div>
 
-            <div class="enquire-contact" data-reveal style="--d:3">
+            <div class="enquire-contact" data-reveal style="--d:2">
               <span class="micro">Direct</span>
               <a href="mailto:studio@jury.studio">studio@jury.studio</a>
               <a href="tel:+41445052140">+41 44 505 21 40</a>
             </div>
           </div>
 
-          <div class="form-panel" data-reveal style="--d:1">
+          <div class="form-panel form-panel--dark" data-reveal style="--d:1">
             <div class="form-head">
               <span class="micro">Enquiry 01</span>
               <span class="form-status">Response within two working days</span>
@@ -489,7 +590,7 @@
 
               <p class="form-error" data-form-error role="alert" hidden>Please complete each field with a valid email.</p>
 
-              <button class="btn btn--form" type="submit">
+              <button class="btn btn--form btn--cream" type="submit">
                 <span>Request a walkthrough</span>
                 <span class="btn-icon" aria-hidden="true"><svg class="icon"><use href="#i-arrow"/></svg></span>
               </button>
@@ -525,8 +626,9 @@
           <ul>
             <li><a href="#studio">Why Jury</a></li>
             <li><a href="#method">Method</a></li>
-            <li><a href="#room">The panel</a></li>
+            <li><a href="#oversight">Oversight</a></li>
             <li><a href="#work">Panels</a></li>
+            <li><a href="#questions">Questions</a></li>
           </ul>
         </nav>
 
@@ -567,6 +669,7 @@
     <span data-chapter-label>00 / Threshold</span>
   </div>
 
+  <script src="assets/js/lenis.min.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

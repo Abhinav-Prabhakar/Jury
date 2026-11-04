@@ -13,6 +13,28 @@
   const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
 
   /* ----------------------------------------------------------
+     Smooth scrolling — Lenis
+     ---------------------------------------------------------- */
+
+  const lenis =
+    window.Lenis && !reduceMotion.matches
+      ? new window.Lenis({
+          duration: 1.1,
+          smoothWheel: true,
+          wheelMultiplier: 0.9
+        })
+      : null;
+
+  if (lenis) {
+    const scrollLoop = (time) => {
+      lenis.raf(time);
+      raf(scrollLoop);
+    };
+
+    raf(scrollLoop);
+  }
+
+  /* ----------------------------------------------------------
      Reveals
      ---------------------------------------------------------- */
 
@@ -254,6 +276,7 @@
     menuToggle.setAttribute("aria-expanded", "true");
     body.classList.add("menu-open");
     header?.classList.remove("is-hidden");
+    lenis?.stop();
 
     if (main) main.inert = true;
     if (footer) footer.inert = true;
@@ -271,6 +294,7 @@
     menu.setAttribute("aria-hidden", "true");
     menuToggle.setAttribute("aria-expanded", "false");
     body.classList.remove("menu-open");
+    lenis?.start();
 
     if (main) main.inert = false;
     if (footer) footer.inert = false;
@@ -323,6 +347,18 @@
     (link) => link.getAttribute("href") !== "#" && !link.classList.contains("skip-link")
   );
 
+  const scrollToTarget = (target) => {
+    if (lenis) {
+      lenis.scrollTo(target, { duration: 1.25 });
+      return;
+    }
+
+    target.scrollIntoView({
+      behavior: reduceMotion.matches ? "auto" : "smooth",
+      block: "start"
+    });
+  };
+
   anchorLinks.forEach((link) => {
     link.addEventListener("click", (event) => {
       if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
@@ -334,10 +370,7 @@
       if (!target) return;
 
       event.preventDefault();
-      target.scrollIntoView({
-        behavior: reduceMotion.matches ? "auto" : "smooth",
-        block: "start"
-      });
+      scrollToTarget(target);
 
       try {
         history.pushState(null, "", hash);
@@ -346,6 +379,34 @@
       }
     });
   });
+
+  /* ----------------------------------------------------------
+     Questions — accordion
+     ---------------------------------------------------------- */
+
+  const faq = document.querySelector("[data-faq]");
+
+  if (faq) {
+    const faqItems = Array.from(faq.querySelectorAll("[data-faq-item]"));
+
+    const setFaqState = (item, open) => {
+      const button = item.querySelector(".faq-question");
+      const answer = item.querySelector(".faq-answer");
+
+      item.classList.toggle("is-open", open);
+      button?.setAttribute("aria-expanded", String(open));
+      if (answer) answer.inert = !open;
+    };
+
+    faqItems.forEach((item) => {
+      setFaqState(item, item.classList.contains("is-open"));
+
+      item.querySelector(".faq-question")?.addEventListener("click", () => {
+        const willOpen = !item.classList.contains("is-open");
+        faqItems.forEach((other) => setFaqState(other, other === item ? willOpen : false));
+      });
+    });
+  }
 
   /* ----------------------------------------------------------
      Enquiry form
@@ -483,6 +544,7 @@
           if (!entry.isIntersecting) return;
           const label = entry.target.dataset.chapter;
           if (label) chapterLabel.textContent = label;
+          body.classList.toggle("chapter-on-dark", entry.target.dataset.tone === "dark");
         });
       },
       { rootMargin: "-42% 0px -48% 0px", threshold: 0 }
@@ -509,6 +571,11 @@
      ---------------------------------------------------------- */
 
   document.querySelector("[data-back-top]")?.addEventListener("click", () => {
+    if (lenis) {
+      lenis.scrollTo(0, { duration: 1.25 });
+      return;
+    }
+
     window.scrollTo({
       top: 0,
       behavior: reduceMotion.matches ? "auto" : "smooth"
