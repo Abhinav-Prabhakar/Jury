@@ -55,7 +55,7 @@ specialist judges — each screen carries one idea, then gets out of the way.
   <sub><b>01 · The specimen verdict.</b><br>A score you can argue with — four dimensions, one dissent, one reason.</sub>
 </td>
 <td width="50%" valign="top">
-  <img src="docs/panel.jpg" alt="A dark green oversight section with the headline: AI prepares the room. People make the call." width="100%">
+  <img src="docs/oversight.jpg" alt="A dark green oversight section with the headline: AI prepares the room. People make the call." width="100%">
   <br>
   <sub><b>02 · The oversight.</b><br>AI prepares the room. People make the call. Decision rights stay human.</sub>
 </td>
