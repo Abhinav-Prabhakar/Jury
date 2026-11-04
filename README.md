@@ -146,6 +146,7 @@ index.html      Landing page
 credits.html    Colophon
 styles.css      Tokens, layout, responsive rules
 main.js         Menu, reveals, parallax, counters, form, clocks
+design.md       Design system, components, motion and copy rules
 assets/img/     Local photography
 docs/           README plates
 ```
