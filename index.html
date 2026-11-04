@@ -35,6 +35,9 @@
     <symbol id="i-plus" viewBox="0 0 16 16">
       <path d="M8 3v10M3 8h10" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round"/>
     </symbol>
+    <symbol id="i-asterisk" viewBox="0 0 24 24">
+      <path d="M12 6v12M17.196 9 6.804 15M6.804 9l10.392 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+    </symbol>
   </svg>
 
   <div class="grain" aria-hidden="true"></div>
@@ -140,35 +143,41 @@
         </div>
         <figcaption class="shell hero-caption">
           <span class="caption-plate">Plate 01</span>
-          <span class="caption-title">The threshold, before the first submission is opened</span>
           <span class="caption-coord">Zurich · 07:12</span>
           <span class="scroll-cue" aria-hidden="true"><i></i>Scroll</span>
         </figcaption>
       </figure>
     </section>
 
-    <div class="marquee-band" aria-hidden="true">
-      <div class="marquee-track">
-        <div class="marquee-group">
-          <span class="marquee-item">Repos</span><span class="marquee-sep"></span>
-          <span class="marquee-item">Demos</span><span class="marquee-sep"></span>
-          <span class="marquee-item">Rubrics</span><span class="marquee-sep"></span>
-          <span class="marquee-item">Evidence</span><span class="marquee-sep"></span>
-          <span class="marquee-item">Dissent</span><span class="marquee-sep"></span>
-          <span class="marquee-item">Deliberation</span><span class="marquee-sep"></span>
-          <span class="marquee-item">Verdict</span><span class="marquee-sep"></span>
-        </div>
-        <div class="marquee-group">
-          <span class="marquee-item">Repos</span><span class="marquee-sep"></span>
-          <span class="marquee-item">Demos</span><span class="marquee-sep"></span>
-          <span class="marquee-item">Rubrics</span><span class="marquee-sep"></span>
-          <span class="marquee-item">Evidence</span><span class="marquee-sep"></span>
-          <span class="marquee-item">Dissent</span><span class="marquee-sep"></span>
-          <span class="marquee-item">Deliberation</span><span class="marquee-sep"></span>
-          <span class="marquee-item">Verdict</span><span class="marquee-sep"></span>
+    <section class="panel-marquee" aria-label="Events judged">
+      <p class="panel-marquee-label">Recently on the panel at</p>
+      <div class="marquee-band">
+        <div class="marquee-fade marquee-fade--left" aria-hidden="true"></div>
+        <div class="marquee-fade marquee-fade--right" aria-hidden="true"></div>
+        <div class="marquee-track">
+          <div class="marquee-group">
+            <span class="marquee-item"><span>FRONTIER//AI</span><svg class="marquee-mark" aria-hidden="true"><use href="#i-asterisk"/></svg></span>
+            <span class="marquee-item"><span>The Agent Games</span><svg class="marquee-mark" aria-hidden="true"><use href="#i-asterisk"/></svg></span>
+            <span class="marquee-item"><span>Latent Space Hack</span><svg class="marquee-mark" aria-hidden="true"><use href="#i-asterisk"/></svg></span>
+            <span class="marquee-item"><span>Neural Prix</span><svg class="marquee-mark" aria-hidden="true"><use href="#i-asterisk"/></svg></span>
+            <span class="marquee-item"><span>Epoch Hack</span><svg class="marquee-mark" aria-hidden="true"><use href="#i-asterisk"/></svg></span>
+            <span class="marquee-item"><span>Signal Cup</span><svg class="marquee-mark" aria-hidden="true"><use href="#i-asterisk"/></svg></span>
+            <span class="marquee-item"><span>Parallel Summit</span><svg class="marquee-mark" aria-hidden="true"><use href="#i-asterisk"/></svg></span>
+            <span class="marquee-item"><span>Model.Lab</span><svg class="marquee-mark" aria-hidden="true"><use href="#i-asterisk"/></svg></span>
+          </div>
+          <div class="marquee-group" aria-hidden="true">
+            <span class="marquee-item"><span>FRONTIER//AI</span><svg class="marquee-mark"><use href="#i-asterisk"/></svg></span>
+            <span class="marquee-item"><span>The Agent Games</span><svg class="marquee-mark"><use href="#i-asterisk"/></svg></span>
+            <span class="marquee-item"><span>Latent Space Hack</span><svg class="marquee-mark"><use href="#i-asterisk"/></svg></span>
+            <span class="marquee-item"><span>Neural Prix</span><svg class="marquee-mark"><use href="#i-asterisk"/></svg></span>
+            <span class="marquee-item"><span>Epoch Hack</span><svg class="marquee-mark"><use href="#i-asterisk"/></svg></span>
+            <span class="marquee-item"><span>Signal Cup</span><svg class="marquee-mark"><use href="#i-asterisk"/></svg></span>
+            <span class="marquee-item"><span>Parallel Summit</span><svg class="marquee-mark"><use href="#i-asterisk"/></svg></span>
+            <span class="marquee-item"><span>Model.Lab</span><svg class="marquee-mark"><use href="#i-asterisk"/></svg></span>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
 
     <section class="section wager" id="studio" data-chapter="01 / Position">
       <div class="shell">

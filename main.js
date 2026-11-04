@@ -27,7 +27,7 @@
           revealObserver.unobserve(entry.target);
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -7% 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
     );
 
     revealItems.forEach((item) => revealObserver.observe(item));
@@ -313,6 +313,38 @@
       event.preventDefault();
       first.focus();
     }
+  });
+
+  /* ----------------------------------------------------------
+     Smooth in-page navigation
+     ---------------------------------------------------------- */
+
+  const anchorLinks = Array.from(document.querySelectorAll('a[href^="#"]')).filter(
+    (link) => link.getAttribute("href") !== "#" && !link.classList.contains("skip-link")
+  );
+
+  anchorLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      if (event.defaultPrevented || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) {
+        return;
+      }
+
+      const hash = link.getAttribute("href");
+      const target = hash ? document.getElementById(hash.slice(1)) : null;
+      if (!target) return;
+
+      event.preventDefault();
+      target.scrollIntoView({
+        behavior: reduceMotion.matches ? "auto" : "smooth",
+        block: "start"
+      });
+
+      try {
+        history.pushState(null, "", hash);
+      } catch {
+        /* file:// and sandboxed contexts can reject history changes. */
+      }
+    });
   });
 
   /* ----------------------------------------------------------

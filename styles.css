@@ -918,10 +918,6 @@ h4 {
   color: var(--ink);
 }
 
-.caption-title {
-  color: var(--ink-soft);
-}
-
 .caption-coord {
   margin-left: auto;
   font-family: var(--mono);
@@ -1023,19 +1019,57 @@ h4 {
 }
 
 /* ------------------------------------------------------------
-   Marquee
+   Panel marquee — recently on the panel at
    ------------------------------------------------------------ */
 
+.panel-marquee {
+  padding-block: clamp(26px, 3.4vw, 38px) clamp(30px, 4vw, 44px);
+  background: var(--dark);
+  color: var(--cream);
+}
+
+.panel-marquee-label {
+  margin-bottom: clamp(18px, 2.4vw, 26px);
+  padding-inline: var(--gutter);
+  text-align: center;
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: rgba(245, 239, 228, 0.56);
+}
+
 .marquee-band {
+  position: relative;
   overflow: hidden;
-  border-block: 1px solid var(--line);
-  background: rgba(255, 252, 246, 0.18);
+}
+
+.marquee-fade {
+  position: absolute;
+  inset-block: 0;
+  z-index: 2;
+  width: clamp(64px, 11vw, 176px);
+  pointer-events: none;
+}
+
+.marquee-fade--left {
+  left: 0;
+  background: linear-gradient(90deg, var(--dark) 0%, rgba(25, 24, 20, 0) 100%);
+}
+
+.marquee-fade--right {
+  right: 0;
+  background: linear-gradient(270deg, var(--dark) 0%, rgba(25, 24, 20, 0) 100%);
 }
 
 .marquee-track {
   display: flex;
   width: max-content;
+  align-items: center;
   animation: marquee 46s linear infinite;
+  will-change: transform;
 }
 
 .marquee-band:hover .marquee-track {
@@ -1046,27 +1080,29 @@ h4 {
   display: flex;
   align-items: center;
   flex: none;
-  gap: 34px;
-  padding: 17px 34px 17px 0;
 }
 
 .marquee-item {
-  font-size: 9.5px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  line-height: 1.4;
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--serif);
+  font-size: clamp(18px, 1.8vw, 22px);
+  line-height: 1;
+  letter-spacing: -0.01em;
   white-space: nowrap;
-  color: var(--muted);
+  color: rgba(245, 239, 228, 0.78);
 }
 
-.marquee-sep {
-  width: 4px;
-  height: 4px;
+.marquee-item > span {
+  padding-inline: clamp(20px, 2.4vw, 28px);
+}
+
+.marquee-mark {
+  width: 14px;
+  height: 14px;
   flex: none;
-  background: var(--ember);
-  opacity: 0.65;
-  transform: rotate(45deg);
+  color: var(--ember);
+  opacity: 0.8;
 }
 
 @keyframes marquee {
@@ -2215,18 +2251,19 @@ body.chapter-hidden .chapter {
 
 .js [data-reveal] {
   opacity: 0;
-  transform: translateY(26px);
-  filter: blur(4px);
+  transform: translateY(28px);
+  filter: blur(8px);
+  will-change: opacity, transform;
   transition:
-    opacity 0.95s var(--ease),
-    transform 1.15s var(--ease),
-    filter 0.95s var(--ease);
-  transition-delay: calc(var(--d, 0) * 95ms);
+    opacity 1.2s var(--ease),
+    transform 1.3s var(--ease),
+    filter 1.2s var(--ease);
+  transition-delay: calc(var(--d, 0) * 110ms);
 }
 
 .js [data-reveal].is-in {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
   filter: blur(0);
 }
 
@@ -2527,11 +2564,6 @@ body.chapter-hidden .chapter {
     gap: 12px;
     flex-wrap: wrap;
     padding-block: 14px;
-  }
-
-  .caption-title {
-    width: 100%;
-    order: 3;
   }
 
   .caption-coord {
