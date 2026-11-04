@@ -23,7 +23,7 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Build-None-22211D?style=for-the-badge" alt="No build step">
-  <img src="https://img.shields.io/badge/Dependencies-Zero-22211D?style=for-the-badge" alt="Zero dependencies">
+  <img src="https://img.shields.io/badge/Dependencies-Vendored-22211D?style=for-the-badge" alt="Vendored dependencies">
   <img src="https://img.shields.io/badge/Responsive-Yes-A45C39?style=for-the-badge" alt="Responsive">
   <img src="https://img.shields.io/badge/License-MIT-22211D?style=for-the-badge" alt="MIT License">
   <img src="https://img.shields.io/github/stars/Abhinav-Prabhakar/Jury?style=for-the-badge&color=A45C39&labelColor=22211D" alt="GitHub stars">
@@ -55,9 +55,9 @@ specialist judges — each screen carries one idea, then gets out of the way.
   <sub><b>01 · The specimen verdict.</b><br>A score you can argue with — four dimensions, one dissent, one reason.</sub>
 </td>
 <td width="50%" valign="top">
-  <img src="docs/panel.jpg" alt="The panel section pairing a sunlit concrete stair with four judge rows." width="100%">
+  <img src="docs/panel.jpg" alt="A dark green oversight section with the headline: AI prepares the room. People make the call." width="100%">
   <br>
-  <sub><b>02 · The panel.</b><br>Engineering, Product, Design, Impact. Four lenses, independent scores.</sub>
+  <sub><b>02 · The oversight.</b><br>AI prepares the room. People make the call. Decision rights stay human.</sub>
 </td>
 </tr>
 </table>
@@ -93,12 +93,22 @@ specialist judges — each screen carries one idea, then gets out of the way.
   <sub><b>05 · Selected records.</b><br>An asymmetric mosaic, graded to the same warm palette.</sub>
 </td>
 <td width="50%" valign="top">
-  <img src="docs/enquire.jpg" alt="The enquiry section with a serif headline and a quiet contact form." width="100%">
+  <img src="docs/questions.jpg" alt="A questions section with the headline: Before you ask the room, and a six-row accordion." width="100%">
   <br>
-  <sub><b>06 · The enquiry.</b><br>Six fields become three. A form that reads like correspondence.</sub>
+  <sub><b>06 · The questions.</b><br>Before you ask the room. The questions every organiser should ask.</sub>
 </td>
 </tr>
 </table>
+
+<br>
+
+## The close
+
+<div align="center">
+  <img src="docs/enquire.jpg" alt="A dark green closing section with the headline: Give good work a fair hearing, and a quiet contact form." width="100%">
+</div>
+
+<p align="center"><sub><b>07 · The close.</b> Give good work a fair hearing. A form that reads like correspondence.</sub></p>
 
 <br>
 
@@ -124,10 +134,10 @@ specialist judges — each screen carries one idea, then gets out of the way.
 
 ## Under the paper
 
-- **Palette** — warm sand <code>#F2ECE1</code>, ink <code>#22211D</code>, ember <code>#A45C39</code>.
+- **Palette** — warm sand <code>#F2ECE1</code>, ink <code>#22211D</code>, ember <code>#A45C39</code>, moss <code>#2B312B</code> and sage <code>#A7B69D</code>.
 - **Type** — Instrument Serif for display, Instrument Sans for text, system mono for record data.
 - **Photography** — local plates, sepia-graded in CSS; no runtime image service.
-- **Motion** — reveals, counters and parallax, all disabled under <code>prefers-reduced-motion</code>.
+- **Motion** — Lenis smooth scroll (vendored), reveals, counters and parallax, all disabled under <code>prefers-reduced-motion</code>.
 - **Access** — skip link, focus-visible states, trapped menu focus, Escape to close, labelled form errors.
 - **Form** — front-end only: validates, then shows a success state. Nothing is sent.
 
@@ -139,15 +149,16 @@ cd Jury
 python3 -m http.server 8000
 ```
 
-Open <http://localhost:8000>. No install, no build, no dependencies.
+Open <http://localhost:8000>. No install, no build, no package manager.
 
 ```text
 index.html      Landing page
 credits.html    Colophon
 styles.css      Tokens, layout, responsive rules
-main.js         Menu, reveals, parallax, counters, form, clocks
+main.js         Menu, Lenis, reveals, parallax, accordion, form, clocks
 design.md       Design system, components, motion and copy rules
 assets/img/     Local photography
+assets/js/      Vendored Lenis
 docs/           README plates
 ```
 

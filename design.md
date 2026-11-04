@@ -95,6 +95,9 @@ hex, in new work.
 | `--line-soft` | `rgba(34,33,29,.09)` | Quiet rule | Row dividers inside a section |
 | `--ember` | `#A45C39` | Accent | Status dots, asterisks, live markers |
 | `--dark` | `#191814` | Inverse surface | Marquee, verdict card, quote, footer |
+| `--moss` | `#2B312B` | Green-black surface | Oversight and closing bands |
+| `--moss-deep` | `#222722` | Green-black recess | Gradient foot of the moss bands |
+| `--sage` | `#A7B69D` | Inverse accent | Check marks, status dot, chapter marker on moss |
 | `--cream` | `#F5EFE4` | Inverse ink | Text and marks on dark |
 | `--line-light` | `rgba(245,239,228,.16)` | Inverse rule | Dividers inside dark surfaces |
 
@@ -107,10 +110,12 @@ These are used in gradients or states and should be promoted to tokens before re
 | `#0D0C0A` | Primary button hover |
 | `#8B3D27` | Form error text |
 | `#F4EFE6 → #F1EADE → #EFE7D9` | Body paper gradient (vertical) |
-| `#EFE7D9 → #EBE2D3` | Panel section gradient |
 | `rgba(255,252,246,.3)` | Hover wash on process/method rows |
-| `rgba(250,246,238,.52)` | Enquiry form panel fill |
+| `rgba(250,246,238,.52)` | Form panel fill on paper |
+| `rgba(245,239,228,.04)` | Form panel fill on moss |
+| `rgba(167,182,157,.12–.13)` | Sage radial wash on the moss bands |
 | `rgba(20,19,16,…)` | Image scrims (0.06–0.82 by stop) |
+| `rgba(20,24,20,…)` | Oversight image scrim |
 
 #### Contrast (measured against `--paper`)
 
@@ -123,6 +128,10 @@ These are used in gradients or states and should be promoted to tokens before re
 | ember / paper | 4.28:1 | Accent only, not body text |
 | faint / paper | 2.80:1 | Non-essential metadata only; never instructions |
 | cream / dark | 15.52:1 | AAA inverse |
+| cream / moss | 11.64:1 | AAA inverse; display and primary copy |
+| sage / moss | 6.23:1 | AA normal; icons and small marks |
+| cream 62% / moss | 5.51:1 | AA normal; section intros |
+| cream 56% / moss | 4.77:1 | AA normal; smallest body copy on moss |
 
 #### Colour rules
 
@@ -132,7 +141,13 @@ These are used in gradients or states and should be promoted to tokens before re
   marquee asterisk or a chapter dot. Do not fill buttons, headings or large
   blocks with it.
 - **Dark bands are chapter breaks.** Use `--dark` for full-bleed moments
-  (marquee, quote, footer, verdict card), not for ordinary sections.
+  (marquee, quote, footer, verdict card) and `--moss` for the two green-black
+  argument bands (Oversight and the closing call). Both are inversions, not a
+  dark theme; the page still opens and reads as warm paper.
+- **Sage is the inverse accent.** On moss, sage replaces ember for check marks,
+  the availability dot and the chapter marker. It never appears on paper.
+- **Cream carries hierarchy on moss.** Primary copy is `--cream`; supporting
+  copy is cream at 56–68%; never below 56% for anything a reader must act on.
 - **Rules carry hierarchy.** Prefer a 1px `--line` divider over a shadow or a
   boxed card.
 - **No gradient text.** Gradients belong to paper backgrounds and photographic
@@ -177,12 +192,14 @@ canonical display sizes; do not invent a new size for a one-off.
 | --- | --- | --- | --- | --- | --- |
 | Hero title `.hero-title` | serif | `clamp(55px, 12.35vw, 184px)` | `0.84` | `-0.028em` | Two masked lines, one italic word |
 | Page title `.credits-title` | serif | `clamp(64px, 10.5vw, 152px)` | `0.86` | `-0.035em` | Italic period set in a `<span>` |
-| Enquire title `.enquire-title` | serif | `clamp(50px, 6.9vw, 108px)` | `0.92` | `-0.03em` | Max `8ch` |
+| Closing title `.cta-title` | serif | `clamp(58px, 9.4vw, 148px)` | `0.88` | `-0.035em` | Max `14ch`, cream on moss |
 | Quote `.quote-body blockquote` | serif | `clamp(38px, 5.4vw, 82px)` | `1.02` | `-0.024em` | Max `21ch`, light on image |
 | Wager title `.wager-title` | serif | `clamp(46px, 6vw, 92px)` | `0.97` | `-0.028em` | Max `14ch` |
 | Statement `.statement` | serif | `clamp(38px, 5vw, 76px)` | `1.01` | `-0.026em` | Max `22ch` |
 | Section H2 `.h2` | serif | `clamp(40px, 4.7vw, 68px)` | `1.01` | `-0.022em` | Max `15ch`, `text-wrap: balance` |
-| Panel quote `.panel-quote blockquote` | serif | `clamp(28px, 2.9vw, 42px)` | `1.03` | `-0.02em` | Max `14ch` |
+| Oversight quote `.oversight-quote blockquote` | serif | `clamp(28px, 2.9vw, 42px)` | `1.03` | `-0.02em` | Max `17ch`, cream on image |
+| Oversight item `.oversight-item h3` | serif | `clamp(26px, 2.4vw, 34px)` | `1` | `-0.02em` | |
+| FAQ question `.faq-question-text` | serif | `clamp(24px, 2.35vw, 33px)` | `1.08` | `-0.018em` | |
 | Process headline `.process-step h3` | serif | `clamp(28px, 2.5vw, 36px)` | `1` | `-0.02em` | |
 | Judge name `.judge h3` | serif | `clamp(26px, 2.4vw, 34px)` | `1` | `-0.02em` | |
 | Case title `.case-caption h3` | serif | `clamp(22px, 2.2vw, 32px)` | `1.03` | `-0.02em` | Max `16ch` |
@@ -268,6 +285,8 @@ single permitted elevation.
 | Menu overlay | `0.85s var(--ease-io)` | `clip-path` top-down |
 | Marquee | `46s linear infinite` | Pauses on hover |
 | Counter | `1500ms`, `1 - 2^(-10t)` | Stats |
+| Smooth scroll | Lenis `duration: 1.1`, `wheelMultiplier: .9` | Wheel only; native on touch |
+| Anchor scroll | Lenis `duration: 1.25` | Honours `scroll-padding-top` |
 
 ### 2.6 Z-index scale
 
@@ -322,8 +341,10 @@ The fixed anatomy is:
 3. **Section body** — one grid or one full-bleed figure. Never both competing.
 4. **Section foot** — optional `.work-foot` with a single text link.
 
-Section labels are numbered in reading order (`01`–`05`). The hero is `00`.
-Keep numbering in sync with `data-chapter` labels.
+Section labels are numbered in reading order (`01`–`06`). The hero is `00`.
+Keep numbering in sync with `data-chapter` labels. Numbering is continuous across
+the page, including the closing call, so the menu and footer can use the same
+numbers as the section tops.
 
 ### 3.2 Landing page outline
 
@@ -333,10 +354,11 @@ Keep numbering in sync with `data-chapter` labels.
 | — | — | `.panel-marquee` | Social proof marquee (dark break) |
 | 01 | `01 / Position` | `.section.wager#studio` | The argument + specimen verdict |
 | 02 | `02 / Method` | `.section.process#method` | Four-pass pipeline |
-| 03 | `03 / Panel` | `.section.panel#room` | Four judges + deliberation plate |
+| 03 | `03 / Oversight` | `.section.oversight#oversight` | Human decision rights on moss |
 | — | `— / Archive` | `.quote-band` | Full-bleed atmospheric quote |
 | 04 | `04 / Panels` | `.section.cases#work` | Selected records mosaic |
-| 05 | `05 / Enquire` | `.section.enquire#enquire` | Contact copy + form |
+| 05 | `05 / Questions` | `.section.faq#questions` | Six-question accordion |
+| 06 | `06 / Enquire` | `.section.cta#enquire` | Closing call + form on moss |
 | — | — | `.site-footer` | Dark footer + giant wordmark |
 
 Chapter labels are also displayed by the fixed vertical `.chapter` indicator,
@@ -348,8 +370,9 @@ updated via IntersectionObserver.
 | --- | --- | --- |
 | Editorial split | `1.15fr 0.85fr`, `align-items: end` | `.section-head` |
 | Argument split | `1.12fr minmax(340px,.88fr)`, centred | `.wager-grid` |
-| Feature split | `1.05fr .95fr`, stretch | `.panel-grid` |
-| Enquiry split | `1.02fr .98fr` | `.enquire-grid` |
+| Oversight split | `1.06fr .94fr`, stretch | `.oversight-grid` |
+| Questions split | `.72fr 1.28fr`, start-aligned | `.faq-grid` |
+| Closing split | `.9fr 1.1fr`, start-aligned | `.cta-body` |
 | Four-up rail | `repeat(4, 1fr)`, left border per item | `.process-grid` |
 | Three-up stat band | `repeat(3, 1fr)`, top rule | `.stat-band` |
 | Twelve-column mosaic | `repeat(12, 1fr)`, spans 7/5/4/4/4 | `.case-grid` |
@@ -364,11 +387,11 @@ reading well, not because a device exists.
 | Width | Changes |
 | --- | --- |
 | `≤1240px` | Legacy section grid narrows; footer becomes 3 columns |
-| `≤1120px` | Wager and panel gaps tighten |
+| `≤1120px` | Wager and oversight gaps tighten |
 | `≤1024px` | Nav tightens; preview rail hides; chapter indicator hides |
-| `≤980px` | Wager, panel and enquiry stack; process becomes 2×2; mosaic becomes 12 + 6/6 |
+| `≤980px` | Wager, oversight, questions and closing split stack; oversight plate caps at `560px`; process becomes 2×2; mosaic becomes 12 + 6/6 |
 | `≤900px` | Primary nav hides, menu toggle appears; header condenses; hero foot stacks; stats 2-up; footer 2-up; section rhythm tightens |
-| `≤760px` | Hero title reduces; hero plate `52vh`; mosaic 1-up; stat band 1-up; footer 1-up; process 2-up retained |
+| `≤760px` | Hero title reduces; hero plate `52vh`; oversight plate `380–520px`; mosaic 1-up; stat band 1-up; footer 1-up; process 2-up retained |
 | `≤560px` | Process 1-up; verdict bars compress |
 | `≤520px` | Gutter `20px`; hero CTA full width; section padding `78px`; stat band becomes horizontal rows; footer legal stacks |
 
@@ -498,6 +521,8 @@ Do not restyle them as small buttons.
 | `.micro` | Metadata, figure captions, form notes, table headers | muted |
 | `.eyebrow` | Thematic kicker above a display line | ink-soft |
 | `.eyebrow--light` | Kicker on dark/image | cream at 60% |
+| `.oversight .label-*`, `.cta .label-*` | Catalogue header on moss | index cream 45%, text cream |
+| `.oversight .section-top > .micro`, `.cta .section-top > .micro` | Note on moss | cream 50% |
 
 Rules:
 - Micro copy is always short — a fragment, not a sentence. "Evidence over
@@ -534,7 +559,8 @@ on hover. Below 900px the nav and header CTA disappear; only the menu toggle rem
 Rules:
 - Max five primary nav items. Nav labels are reader-facing and map to section
   IDs; the visible section label may be more formal ("Why Jury" → `#studio`,
-  labelled "Position"; "Panel" → `#room`, labelled "The panel").
+  labelled "Position"; "Oversight" → `#oversight`). The menu carries the full
+  numbered sequence (`01`–`06`), including Questions and Enquire.
 - Always keep the header logo linked to `#top` / `index.html`.
 - Do not add a second header CTA or a search field.
 
@@ -571,28 +597,27 @@ Full-screen paper overlay, revealed by `clip-path: inset(0 0 100% 0)` →
       <span class="line"><span class="line-inner">deserves a <em>verdict</em><span class="period">.</span></span></span>
     </h1>
     <div class="hero-foot">…lede + CTA pair…</div>
-    <div class="hero-meta">…three record facts…</div>
   </div>
-  <figure class="hero-figure">…plate + caption…</figure>
+  <figure class="hero-figure">…plate + plate mark…</figure>
 </section>
 ```
 
 | Element | Spec |
 | --- | --- |
-| Kicker | Eyebrow left, locale + dot right, hairline underneath |
+| Kicker | Locale + ember dot only, hairline underneath; no eyebrow line |
 | Title | Two lines, each masked by `.line` (`overflow:hidden`), inner starts `translateY(112%)` |
 | Emphasis | One italic serif word; the period is set roman in a separate span |
 | Lede | Max `47ch`, `clamp(15.5px,1.25vw,18px)`, ink-soft |
 | Actions | Filled button + text link, aligned to the lede's baseline |
-| Meta | Mono `9.5px` uppercase, hairline top, coordinate pushed right |
 | Plate | Height `clamp(420px,64vh,760px)`, image `scale(1.045)`, bottom scrim |
-| Caption | Plate number (serif italic), coordinates (mono), scroll cue |
+| Plate mark | "Plate 01 — Before the verdict" at the lower edge, `aria-hidden` |
 
 The `<h1>` has a plain-text `aria-label` so masked lines and the italic period do
-not fragment the accessible name. The plate mark ("Plate 01 — Before the
-verdict") is decorative and `aria-hidden`.
+not fragment the accessible name. The plate mark is decorative and `aria-hidden`.
 
-Do not add a third headline line, a background video, or a second CTA pair.
+The hero carries **one** meta line (locale); there is no eyebrow, no second meta
+row and no image caption. Do not add a third headline line, a background video,
+or a second CTA pair.
 
 ### 4.10 Panel marquee
 
@@ -663,26 +688,71 @@ Four numbered passes (`Ingest → Convene → Deliberate → Resolve`).
   so mark it `aria-hidden` in new work to avoid a double announcement.
 - Responsive: 2×2 at 980px, 1-up at 560px, with borders collapsing cleanly.
 
-### 4.14 Panel section
+### 4.14 Oversight section
 
-Two-column feature: a tall photographic plate with an overlaid quote, and a
-ruled list of judges.
+The first moss band. Two columns: a tall photographic plate with an overlaid
+quote, and a ruled list of human decision rights.
+
+**Band**
+- Background: `--moss` to `--moss-deep` vertical, plus a sage radial wash at the
+  top-right (`rgba(167,182,157,.12)`).
+- Border-block: 1px cream at 8%; the section-top rule uses `--line-light`.
+- Section label and micro invert to cream; the H2 caps at `22ch`.
 
 **Plate**
-- Height `clamp(480px,44vw,620px)`; image `scale(1.04)`.
-- Scrim: transparent to 68% dark at the bottom.
-- Quote: micro fig label + serif quote, bottom-left, cream, max `14ch`.
+- Height `clamp(480px,44vw,620px)`, full column height; image `scale(1.04)`.
+- Scrim: transparent at 42%, `rgba(20,24,20,.78)` at the bottom.
+- Quote: serif `clamp(28px,2.9vw,42px)`, max `17ch`, cream; micro label below.
 - The figure has a descriptive `alt`; the scrim is `aria-hidden`.
 
-**Judge list**
-- Header row: "Panel 118" + "4 judges", hairline.
-- Each row: 48px circled serif initial, name + one-line description, mono index.
-- Hover inverts the initial circle to ink/paper.
-- Last row is followed by a rule and a note: "Scores are sealed until all four are in."
-- Judges are `<article>` elements because each is a self-contained unit; the
-  index is `aria-hidden`.
+**Decision list**
+- Three `<article>` rows separated by `--line-light`; the first row has no top
+  rule and no top padding.
+- Each row: a 32px circled check (1px sage border at 42%, sage glyph) in a
+  `34px` column, then a serif `h3` and a 14px paragraph at cream 56%, max `46ch`.
+- The check is `aria-hidden`; the row is understood from its heading.
+- The list closes with a bordered caveat at 13.5px: a bold lead-in in cream 86%
+  followed by the limitation in cream 56%. The caveat is essential copy, so it
+  never drops below 13.5px or cream 56%.
 
-### 4.15 Quote band
+**Tone**
+- The section carries `data-tone="dark"`, which switches the fixed chapter
+  indicator to cream/sage while the band is in view.
+- The mobile plate becomes `clamp(400px,58vw,560px)` at 980px and
+  `clamp(380px,88vw,520px)` at 760px.
+
+### 4.15 Questions section
+
+A paper section pairing a short argument with a single-open FAQ accordion.
+
+**Layout**
+- `.faq-grid`: `.72fr 1.28fr`, start-aligned, `40–96px` gap.
+- Intro: H2 max `10ch` ("Before you / *ask the room.*") and a `34ch` intro.
+- The list has a top hairline; every item has a bottom hairline.
+
+**Question row**
+- A full-width `<button>` inside an `<h3>`, flex with an `18px` gap.
+- Mono index `8.5px` at `--faint`, width `20px`, aligned to the question cap.
+- Question: serif `clamp(24px,2.35vw,33px)`, ink, max two lines on desktop.
+- Toggle: 34px circle, 1px `--line`; the `#i-plus` glyph rotates `45deg` when
+  open. Open state fills the circle with ink and sets the glyph to paper.
+- Hover darkens the toggle border only; the row itself does not shift.
+
+**Answer**
+- `display: grid` with `grid-template-rows: 0fr → 1fr` over `0.55s var(--ease)`;
+  the inner wrapper is `overflow: hidden`.
+- Answer copy: 14.5px, `1.75`, `--muted`, max `64ch`, inset `0 52px 28px 38px`.
+- Only one item is open at a time. The first item ships open.
+- Closed answers are `inert`, so links and text inside them leave the tab order.
+
+**Accessibility**
+- Button carries `aria-expanded` and `aria-controls`; the answer is a
+  `role="region"` labelled by the button.
+- Without JS, `.no-js` forces every answer open and hides the toggles.
+- The index and toggle are `aria-hidden`; the question text is the accessible
+  name.
+
+### 4.16 Quote band
 
 A full-bleed atmospheric break between argument and evidence.
 
@@ -694,7 +764,7 @@ A full-bleed atmospheric break between argument and evidence.
 - Content is vertically distributed with `space-between` so the quote sits low.
 - One quote per page. Do not autoplay a carousel of testimonials.
 
-### 4.16 Case mosaic
+### 4.17 Case mosaic
 
 Five selected records in a 12-column asymmetric grid.
 
@@ -717,29 +787,33 @@ Responsive: at 980px wide becomes full-width and the rest 6/6; at 760px all
 cards stack full-width, arrows always visible. Captions stay bottom-left with a
 bottom scrim; never place text on an ungraded image.
 
-### 4.17 Enquiry section
+### 4.18 Closing call
 
-Two columns: argument on the left, form panel on the right.
+The second moss band, and the page's only enquiry surface.
 
-**Left**
-- Section label (`05 / Enquire`).
-- Display title "Bring your *hackathon.*" max `8ch`.
-- Lede max `44ch`.
-- Availability row with ember dot above a hairline.
-- Direct contact: "Direct" micro, then serif email and phone links with a
-  persistent hairline underline that darkens on hover.
+**Band**
+- Same `--moss` → `--moss-deep` gradient and sage radial wash as Oversight;
+  a cream 10% top border separates it from the paper.
+- Section label (`06 / Enquire`), micro "Your next judging room".
+- Display title "Give good work / *a fair hearing.*" at
+  `clamp(58px,9.4vw,148px)`, max `14ch`, cream.
 
-**Right — form panel**
-- Paper fill at 52% with `blur(2px)`, 1px border, padding `24–42px`.
-- Head: "Enquiry 01" micro + mono response-time note, hairline.
-- Three fields only: name, email, one-line event description.
-- Labels uppercase `9px`; inputs are transparent with a bottom rule only,
-  `16px` text to avoid iOS zoom. Placeholder is ink at 32%.
-- Error: `#8B3D27`, `role="alert"`, `aria-invalid` on the offending input, focus
-  moved to the first invalid field.
-- Success: replaces the form, `tabindex="-1"`, focused programmatically,
-  personalised with the first name, plus "Send another" text link that resets.
-- Privacy note: uppercase micro, faint.
+**Body**
+- `.cta-body`: `.9fr 1.1fr`, start-aligned, top rule at cream 18%.
+- Lede max `42ch`, cream 68%, `clamp(15.5px,1.25vw,18px)`.
+- Availability row: sage dot, cream 58%, hairline above.
+- Direct contact: "Direct" micro, then cream email and phone links with a
+  persistent cream underline that brightens on hover.
+
+**Form panel — dark variant**
+- `.form-panel--dark`: cream 4% fill, `blur(2px)`, cream 18% border.
+- Head: "Enquiry 01" micro + response-time note, `--line-light` rule.
+- Fields are transparent with a cream 26% bottom rule, cream text and cream 30%
+  placeholders; labels are cream 55%.
+- Error text lightens to `#E2A58A` for contrast on moss.
+- The submit button is `.btn--cream`: cream fill, ink text, ink icon well.
+- Privacy note is cream 56%, not faint.
+- Success state, validation and focus semantics are unchanged from §7.5.
 
 Rules:
 - Keep the form to three fields. It is correspondence, not onboarding.
@@ -747,8 +821,10 @@ Rules:
 - The form is front-end only in this demonstration; if wired to a backend, keep
   the same validation and success semantics and update the privacy copy.
 - Do not use native browser validation bubbles; the form is `novalidate`.
+- Only one enquiry surface exists on the page; do not add a second form in the
+  footer.
 
-### 4.18 Footer
+### 4.19 Footer
 
 A dark closing colophon with four columns and a giant wordmark.
 
@@ -769,12 +845,14 @@ Rules:
 - Back-to-top is a 38px circle with an upward arrow (rotated `#i-down`), labelled.
 - The giant wordmark never becomes interactive and never receives meaning.
 
-### 4.19 Chapter indicator
+### 4.20 Chapter indicator
 
 A fixed, vertical chapter label at the left edge.
 
 - Rotated `-90deg`, origin left centre, positioned at `left: calc(var(--gutter) * .38)`.
 - Sans `8.5px` uppercase, `0.15em`; 4px ember dot.
+- On moss bands (`data-tone="dark"`) the label turns cream and the dot turns
+  sage via `body.chapter-on-dark`, so the marker stays visible on the inversion.
 - Fades in after `body.is-ready` (set 500ms after load), fades out when the footer
   enters view (`body.chapter-hidden`).
 - Hidden below 1024px and from assistive tech (`aria-hidden`).
@@ -783,7 +861,7 @@ A fixed, vertical chapter label at the left edge.
 - Chapter labels are decorative duplication of section labels; never rely on them
   for navigation or meaning.
 
-### 4.20 Colophon page pattern
+### 4.21 Colophon page pattern
 
 `credits.html` is the template for any secondary/legal page.
 
@@ -833,7 +911,7 @@ The warm, low-saturation grade is applied in CSS, not baked into files.
 | Context | Filter |
 | --- | --- |
 | Hero plate | `saturate(.82) contrast(1.03) sepia(.05)` |
-| Panel plate | `saturate(.66) contrast(1.06) sepia(.08)` |
+| Oversight plate | `saturate(.62) contrast(1.05) sepia(.06)` |
 | Quote plate | `saturate(.6) contrast(1.05) sepia(.08)` |
 | Case cards (rest) | `grayscale(.38) saturate(.58) sepia(.12) contrast(1.05)` |
 | Case cards (hover) | `grayscale(.08) saturate(.86) sepia(.04) contrast(1.02)` |
@@ -848,7 +926,7 @@ replacing it.
 Text on photography always sits on a gradient scrim:
 
 - Hero: transparent to 20% dark at the bottom, plus a faint horizontal wash.
-- Panel: transparent to 68% dark from 48% down.
+- Oversight: transparent to 78% `rgba(20,24,20)` from 42% down.
 - Quote: multi-stop vertical (52% → 6% → 28% → 82%) plus a left-to-right 42% wash.
 - Cases: 12% top → transparent 38% → 72% bottom.
 
@@ -891,7 +969,9 @@ scrolling, with a base `scale(1.055)` to avoid exposed edges.
 - Slow and eased: `0.8–1.45s` for entrances, `0.3–0.65s` for feedback.
 - Only animate `transform`, `opacity`, `filter` and `clip-path`. Never animate
   layout properties.
-- Nothing may block scroll or hijack the wheel.
+- Smooth scrolling is eased, not hijacked: the wheel still maps directly to
+  scroll, there are no pinned scenes, and `prefers-reduced-motion` falls back to
+  native scrolling.
 
 ### 6.2 Scroll reveals
 
@@ -930,8 +1010,16 @@ Run once on load, only under `prefers-reduced-motion: no-preference`.
   upward delta of 4px.
 - Header never hides while the menu is open.
 - Scroll handlers are passive and throttled through `requestAnimationFrame`.
-- In-page anchors scroll smoothly (auto under reduced motion) and update history
-  without a jump.
+- Wheel scrolling runs through the vendored Lenis build
+  (`assets/js/lenis.min.js`) with `duration: 1.1`, `smoothWheel: true` and
+  `wheelMultiplier: .9`. Lenis is not initialised under reduced motion.
+- In-page anchors are intercepted and passed to `lenis.scrollTo(target, {
+  duration: 1.25 })`; history is updated without a jump. Lenis subtracts the
+  CSS `scroll-padding-top` itself, so the handler passes no extra header offset.
+- The menu calls `lenis.stop()` on open and `lenis.start()` on close; the
+  back-to-top control uses the same 1.25s scroll.
+- Touch scrolling stays native. No scroll-jacked sections or horizontal wheel
+  capture.
 
 ### 6.5 Counters
 
@@ -954,7 +1042,7 @@ Run once on load, only under `prefers-reduced-motion: no-preference`.
 
 `@media (prefers-reduced-motion: reduce)` must:
 
-- Set `scroll-behavior: auto`.
+- Set `scroll-behavior: auto` and leave Lenis uninitialised.
 - Collapse all animation/transition durations to `0.01ms`.
 - Remove hero line offsets and entrance animations.
 - Show all `[data-reveal]` content immediately.
@@ -976,8 +1064,10 @@ Non-negotiable requirements for every page and component.
 - Landmarks: `<header>`, `<nav aria-label="Primary">`, `<main id="main">`, `<footer>`.
 - Sections that represent a chapter may be labelled by their heading; decorative
   chapter markers are `aria-hidden`.
-- Ordered processes use `<ol>`; navigation lists use `<nav>` + links; judge
-  entries use `<article>`.
+- Ordered processes use `<ol>`; navigation lists use `<nav>` + links; oversight
+  rows and FAQ items use `<article>`.
+- FAQ questions are `<button>` elements inside `<h3>`; answers are regions
+  labelled by their question.
 
 ### 7.2 Keyboard
 
@@ -986,6 +1076,8 @@ Non-negotiable requirements for every page and component.
   (`1.5px currentColor`, `4px` offset).
 - The menu traps focus, closes on Escape, and restores focus on close.
 - `main` and `footer` are `inert` while the menu is open.
+- FAQ questions toggle on Enter/Space, expose `aria-expanded`, and closed
+  answers are `inert` so their content is skipped by Tab.
 - No positive `tabindex`. Only the success message uses `tabindex="-1"` for
   programmatic focus.
 
@@ -1001,8 +1093,8 @@ Non-negotiable requirements for every page and component.
 
 ### 7.4 Colour and type
 
-- Body copy uses at least `--ink-soft` (7.66:1). `--faint` is never used for
-  instructions or essential content.
+- Body copy uses at least `--ink-soft` (7.66:1) on paper and cream 56% (4.77:1)
+  on moss. `--faint` is never used for instructions or essential content.
 - Do not rely on colour alone: status dots are paired with text; hover states
   also change underline, position or opacity.
 - Respect 200% zoom and 320px width. No horizontal scroll.
@@ -1073,14 +1165,17 @@ decision: short declaratives, concrete nouns, no throat-clearing, no hype.
 
 | Context | Copy |
 | --- | --- |
-| Hero eyebrow | AI judging for hackathons |
+| Hero locale | Zurich · London |
 | Hero CTA | Judge your hackathon |
 | Hero secondary | Read the method |
 | Section 01 | Position · Evidence over applause |
 | Section 02 | Method · From repo to verdict |
-| Section 03 | The panel · Independent by design |
+| Section 03 | Oversight · Decision rights, always human |
 | Section 04 | Panels · Selected records |
-| Section 05 | Enquire · Two pilot events open for 2027 |
+| Section 05 | Questions · Asked plainly |
+| Section 06 | Enquire · Your next judging room |
+| Oversight caveat | A necessary caveat: no scoring system can guarantee fairness. |
+| Closing title | Give good work a fair hearing. |
 | Form CTA | Request a walkthrough |
 | Form note | No mailing lists. No follow-ups. Your submissions stay yours. |
 | Success | Your event is with us. We will reply within two working days, from a person rather than a system. |
@@ -1095,14 +1190,15 @@ decision: short declaratives, concrete nouns, no throat-clearing, no hype.
 index.html      Landing page
 credits.html    Colophon / secondary page
 styles.css      Tokens, reset, components, responsive, reduced motion
-main.js         Reveals, header, parallax, counters, menu, form, clocks, chapters
+main.js         Lenis, reveals, header, parallax, counters, menu, accordion, form, clocks, chapters
 assets/img/     Local photography
+assets/js/      Vendored Lenis 1.3.27
 assets/favicon  Hand-authored SVG mark
 docs/           README screenshots (not used by the site)
 ```
 
-- No build step, no package manager, no framework, no runtime dependencies except
-  Google Fonts.
+- No build step, no package manager, no framework. The only runtime code
+  dependency is the vendored Lenis file; fonts come from Google Fonts.
 - New pages are standalone `.html` files linking the same `styles.css`.
 - Keep CSS in one file; add new component blocks in the matching commented section.
 - Keep JS in the existing IIFE; guard every feature for the elements it needs.
@@ -1141,6 +1237,8 @@ docs/           README screenshots (not used by the site)
 | `data-menu-toggle`, `data-menu`, `data-menu-close`, `data-menu-link` | Menu | Open/close, focus trap, inert |
 | `data-count`, `data-suffix` | Counters | One-time count-up |
 | `data-chapter`, `data-chapter-label` | Chapter rail | Active chapter label (`data-chapter-indicator` is markup only) |
+| `data-tone="dark"` | Chapter rail | Switches the indicator to cream/sage on moss bands |
+| `data-faq`, `data-faq-item` | Accordion | Single-open question list, `aria-expanded`, `inert` answers |
 | `data-clock="Europe/Zurich"` | Footer clocks | Local time, 30s update |
 | `data-footer` | Footer | Hides chapter rail |
 | `data-back-top` | Footer | Smooth scroll to top |
@@ -1163,9 +1261,9 @@ likewise retains the work preview feature.
 
 Do not reuse these for new work unless you are intentionally reviving that
 pattern. New components should follow the current set documented above
-(`section-top`, `wager`, `verdict-card`, `process`, `panel`, `quote-band`,
-`cases`, `enquire`, footer). When removing or reviving legacy rules, update this
-document in the same commit.
+(`section-top`, `wager`, `verdict-card`, `process`, `oversight`, `faq`,
+`quote-band`, `cases`, `cta`, footer). When removing or reviving legacy rules,
+update this document in the same commit.
 
 ---
 
@@ -1201,6 +1299,7 @@ document in the same commit.
 
 **Visual**
 - [ ] Warm paper base, ink text, one ember accent moment per viewport.
+- [ ] Moss bands invert to cream/sage; ember does not appear on moss.
 - [ ] No pure black/white, no gradient text, no decorative glow or glass.
 - [ ] Display type is Instrument Serif, body is Instrument Sans, data is mono.
 - [ ] Headings use one italic emphasis at most.
@@ -1213,7 +1312,9 @@ document in the same commit.
 - [ ] Reveals are one-time, staggered 0–4, and disabled for reduced motion.
 - [ ] Hover states have a resting equivalent on touch.
 - [ ] No layout animation, no scroll hijacking, no attention loops.
+- [ ] Lenis is absent under reduced motion; anchors still land correctly.
 - [ ] Fixed header offset is respected by anchor links.
+- [ ] FAQ opens one item at a time and closed answers are `inert`.
 
 **Accessibility**
 - [ ] Keyboard reaches everything; focus ring is visible.
@@ -1264,6 +1365,9 @@ document in the same commit.
   --line-soft: rgba(34, 33, 29, 0.09);
   --ember: #a45c39;
   --dark: #191814;
+  --moss: #2b312b;
+  --moss-deep: #222722;
+  --sage: #a7b69d;
   --cream: #f5efe4;
   --line-light: rgba(245, 239, 228, 0.16);
 
@@ -1304,6 +1408,9 @@ clip-path 0.85s var(--ease-io);
 
 /* Hover feedback */
 0.3s–0.65s var(--ease);
+
+/* Smooth scroll (Lenis) */
+duration 1.1; anchors 1.25;
 ```
 
 Canonical utility classes:
